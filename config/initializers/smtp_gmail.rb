@@ -7,7 +7,7 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true
 }
 
-ActionMailer::Base.default_url_options[:host] = "localhost:3000"
+ActionMailer::Base.default_url_options[:host] = "nameless-depths-8475.herokuapp.com"
 
 #rails plugin install git://github.com/adamwiggins/gmail_smtp.git
 #$ heroku config:add GMAIL_SMTP_USER=username@gmail.com
