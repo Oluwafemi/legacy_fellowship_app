@@ -64,5 +64,13 @@ module Legacydatabase
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.template_engine :haml
+      #g.orm             :mongoid
+      #g.test_framework  :rspec, :fixture => false
+      #g.view_specs      false #g.helper_specs    false
+      #g.fixture_replacement :fabrication
+    end
   end
 end
