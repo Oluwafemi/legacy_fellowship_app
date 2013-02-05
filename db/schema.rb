@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202195143) do
+ActiveRecord::Schema.define(:version => 20130205204657) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -69,8 +69,12 @@ ActiveRecord::Schema.define(:version => 20130202195143) do
     t.string   "cih_address"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "ats_level_id"
   end
 
+  add_index "legacy_members", ["phone"], :name => "phone_index", :unique => true
   add_index "legacy_members", ["surname", "first_name", "middle_name"], :name => "names", :unique => true
+
+  add_foreign_key "legacy_members", "ats_levels", :name => "legacy_members_ats_level_id_fk"
 
 end
